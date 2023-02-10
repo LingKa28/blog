@@ -1,0 +1,174 @@
+---
+title: 垂直居中你不知道的方法
+authors: [ying]
+tags: [CSS, Tips]
+---
+
+&emsp;&emsp;
+在 CSS 中对元素进行**水平居中**是非常简单的：
+如果它是一个行内元素，就对它的父元素应用 `text-align: center;`
+如果他是一个块级元素，就对他自身应用 `margin: auto;`
+然而如果要对一个元素进行**垂直居中**，就没有这么容易了。
+
+![博文封面](./img/cover.png)
+
+&emsp;&emsp;
+让我们一来看看吧 ~
+
+<!--truncate-->
+
+## 基于绝对定位的解决方案
+
+&emsp;&emsp;
+如果目标元素有固定的宽度和高度，我们可以这样写：
+
+```css
+main {
+  position: absolute;
+  top: calc(50% - 3em);
+  left: calc(50% - 6em);
+  width: 12em; 
+  height: 6em;
+}
+```
+
+&emsp;&emsp;
+但在通常的情况下，对那些需要居中的元素来说，其尺寸往往是由其内容来决定的。
+我们可以用这个意想不到的写法：
+
+```css
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+&emsp;&emsp;
+来尝试一下吧：
+
+```jsx live
+// jsx
+
+function Demo() {
+  const positionStyle = {
+    position: 'absolute',
+
+    top: 'calc(50% - 3em)',
+    left: 'calc(50% - 6em)',
+    width: '12em', 
+    height: '6em',
+
+    // top: '50%',
+    // left: '50%',
+    // transform: 'translate(-50%, -50%)',
+  };
+
+    return (
+    <div 
+      style={{ 
+        position: 'relative', 
+        height: '12em',
+        background: 'hsl(280, 80%, 40%)', 
+        color: 'hsl(0, 0%, 90%)',
+        fontSize: '2rem',
+        whiteSpace: 'nowrap',
+      }}
+    >
+      <div 
+        style={{ 
+          padding: '1em 1.5em',
+          background: 'hsl(0, 0%, 15%)',
+          textAlign: 'center',
+          ...positionStyle, 
+        }}
+      >
+        
+        <p>Am I centered yet?</p>
+        <p style={{ fontSize: '60%' }}>Center me, please!</p>
+      </div>
+    </div>
+  );
+}
+```
+
+## 基于视口单位的解决方案
+
+&emsp;&emsp;
+如果我们只想把元素相对于视口居中，我们可以这样写：
+
+```css
+main {
+  width: 12em,;
+  margin: 50vh auto 0;
+  transform: translateY(-50%)
+}
+```
+
+## 基于 Flexbox 的解决方案
+
+&emsp;&emsp;
+这是毋庸置疑最佳的解决方案
+
+```css
+container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+&emsp;&emsp;
+其实我们这样写也能让目标元素在水平和垂直方向上居中：
+
+```css
+container {
+  display: flex;
+}
+
+main {
+  margin auto;
+}
+```
+
+```jsx live
+// jsx
+
+function Demo() {
+  const containerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+
+  const mainStyle = {
+    // margin: 'auto',
+  }
+
+  return (
+    <div 
+      style={{ 
+        height: '12em',
+        background: 'hsl(280, 80%, 40%)', 
+        color: 'hsl(0, 0%, 90%)',
+        fontSize: '2rem',
+        whiteSpace: 'nowrap',
+        ...containerStyle,
+      }}
+    >
+      <div 
+        style={{ 
+          padding: '1em 1.5em',
+          background: 'hsl(0, 0%, 15%)',
+          textAlign: 'center',
+          ...mainStyle,
+        }}
+      >
+        <p>Am I centered yet?</p>
+        <p style={{ fontSize: '60%' }}>Center me, please!</p>
+      </div>
+    </div>
+  );
+}
+```
