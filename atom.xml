@@ -2,24 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-test-site.com/blog/</id>
     <title>Ying's blog Blog</title>
-    <updated>2023-01-21T00:00:00.000Z</updated>
+    <updated>2022-10-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-test-site.com/blog/"/>
     <subtitle>Ying's blog Blog</subtitle>
     <icon>https://your-docusaurus-test-site.com/blog/https://github.com/yingcnf.png</icon>
-    <entry>
-        <title type="html"><![CDATA[测试]]></title>
-        <id>/2023/01/21/test</id>
-        <link href="https://your-docusaurus-test-site.com/blog/2023/01/21/test"/>
-        <updated>2023-01-21T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[这是一篇测试博客呀 (●'◡'●)]]></summary>
-        <content type="html"><![CDATA[<p>这是一篇测试博客呀 (●'◡'●)</p>]]></content>
-        <author>
-            <name>Ying</name>
-            <uri>https://github.com/YINGcnf</uri>
-        </author>
-        <category label="测试" term="测试"/>
-    </entry>
     <entry>
         <title type="html"><![CDATA[垂直居中你不知道的方法]]></title>
         <id>/2022/10/13/vertical-center</id>

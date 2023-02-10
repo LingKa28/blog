@@ -4,19 +4,10 @@
         <title>Ying's blog Blog</title>
         <link>https://your-docusaurus-test-site.com/blog/</link>
         <description>Ying's blog Blog</description>
-        <lastBuildDate>Sat, 21 Jan 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Oct 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
-        <item>
-            <title><![CDATA[测试]]></title>
-            <link>https://your-docusaurus-test-site.com/blog/2023/01/21/test</link>
-            <guid>/2023/01/21/test</guid>
-            <pubDate>Sat, 21 Jan 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[这是一篇测试博客呀 (●'◡'●)]]></description>
-            <content:encoded><![CDATA[<p>这是一篇测试博客呀 (●'◡'●)</p>]]></content:encoded>
-            <category>测试</category>
-        </item>
         <item>
             <title><![CDATA[垂直居中你不知道的方法]]></title>
             <link>https://your-docusaurus-test-site.com/blog/2022/10/13/vertical-center</link>
